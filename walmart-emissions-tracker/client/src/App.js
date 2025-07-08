@@ -333,7 +333,7 @@ function App() {
 
   useEffect(() => {
     // In a real app, you would fetch from your backend API
-    // axios.get('http://localhost:5000/api/stores')
+    // axios.get('http://localhost:5000/routes/stores.js')
     //   .then(res => setStores(res.data))
     //   .catch(err => console.error(err));
     
