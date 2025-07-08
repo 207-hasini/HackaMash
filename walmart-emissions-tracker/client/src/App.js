@@ -33,8 +33,7 @@ const sampleStores = [
     city: "Austin",
     state: "TX",
     address: "710 E Ben White Blvd",
-    emissions: 185000,
-    type: "Supercenter"
+    emissions: 185000
   },
   {
     storeId: "WM-TX-1002",
@@ -42,8 +41,7 @@ const sampleStores = [
     city: "Dallas",
     state: "TX",
     address: "4001 E Highway 80",
-    emissions: 210000,
-    type: "Supercenter"
+    emissions: 210000
   },
   {
     storeId: "WM-TX-1003",
@@ -51,8 +49,7 @@ const sampleStores = [
     city: "Houston",
     state: "TX",
     address: "111 Yale St",
-    emissions: 198000,
-    type: "Supercenter"
+    emissions: 198000
   },
   {
     storeId: "WM-TX-1004",
@@ -60,8 +57,7 @@ const sampleStores = [
     city: "San Antonio",
     state: "TX",
     address: "5555 Dezavala Rd",
-    emissions: 167000,
-    type: "Supercenter"
+    emissions: 167000
   },
   {
     storeId: "WM-TX-1005",
@@ -69,8 +65,7 @@ const sampleStores = [
     city: "Waco",
     state: "TX",
     address: "301 W State Hwy 6",
-    emissions: 142000,
-    type: "Neighborhood Market"
+    emissions: 142000
   },
 
   // California (10 stores)
@@ -80,8 +75,7 @@ const sampleStores = [
     city: "Los Angeles",
     state: "CA",
     address: "6040 Laurel Canyon Blvd",
-    emissions: 75000,
-    type: "Neighborhood Market"
+    emissions: 75000
   },
   {
     storeId: "WM-CA-2002",
@@ -89,8 +83,7 @@ const sampleStores = [
     city: "Mountain View",
     state: "CA",
     address: "600 Showers Drive",
-    emissions: 92000,
-    type: "Neighborhood Market"
+    emissions: 92000
   },
   {
     storeId: "WM-CA-2003",
@@ -98,8 +91,7 @@ const sampleStores = [
     city: "San Diego",
     state: "CA",
     address: "3162 University Ave",
-    emissions: 187000,
-    type: "Supercenter"
+    emissions: 187000
   },
   {
     storeId: "WM-CA-2004",
@@ -107,8 +99,7 @@ const sampleStores = [
     city: "Sacramento",
     state: "CA",
     address: "1000 Riverside Parkway",
-    emissions: 165000,
-    type: "Supercenter"
+    emissions: 165000
   },
   {
     storeId: "WM-CA-2005",
@@ -116,8 +107,7 @@ const sampleStores = [
     city: "Oakland",
     state: "CA",
     address: "8400 Edgewater Dr",
-    emissions: 68000,
-    type: "Neighborhood Market"
+    emissions: 68000
   },
 
   // Florida (8 stores)
@@ -127,8 +117,7 @@ const sampleStores = [
     city: "Orlando",
     state: "FL",
     address: "8100 S John Young Pkwy",
-    emissions: 165000,
-    type: "Supercenter"
+    emissions: 165000
   },
   {
     storeId: "WM-FL-3002",
@@ -136,8 +125,7 @@ const sampleStores = [
     city: "Miami",
     state: "FL",
     address: "2950 SW 8th St",
-    emissions: 178000,
-    type: "Supercenter"
+    emissions: 178000
   },
   {
     storeId: "WM-FL-3003",
@@ -145,8 +133,7 @@ const sampleStores = [
     city: "Tampa",
     state: "FL",
     address: "1505 N Dale Mabry Hwy",
-    emissions: 155000,
-    type: "Supercenter"
+    emissions: 155000
   },
   {
     storeId: "WM-FL-3004",
@@ -154,8 +141,7 @@ const sampleStores = [
     city: "Kissimmee",
     state: "FL",
     address: "2051 E Osceola Pkwy",
-    emissions: 72000,
-    type: "Neighborhood Market"
+    emissions: 72000
   },
 
   // New York (5 stores)
@@ -165,8 +151,7 @@ const sampleStores = [
     city: "New York",
     state: "NY",
     address: "5030 Broadway",
-    emissions: 65000,
-    type: "Neighborhood Market"
+    emissions: 65000
   },
   {
     storeId: "WM-NY-4002",
@@ -174,8 +159,7 @@ const sampleStores = [
     city: "Valley Stream",
     state: "NY",
     address: "100 Green Acres Rd",
-    emissions: 185000,
-    type: "Supercenter"
+    emissions: 185000
   },
   {
     storeId: "WM-NY-4003",
@@ -183,8 +167,7 @@ const sampleStores = [
     city: "Batavia",
     state: "NY",
     address: "4133 Veterans Memorial Dr",
-    emissions: 142000,
-    type: "Supercenter"
+    emissions: 142000
   },
 
   // Illinois (5 stores)
@@ -194,8 +177,7 @@ const sampleStores = [
     city: "Chicago",
     state: "IL",
     address: "4626 W Diversey Ave",
-    emissions: 195000,
-    type: "Supercenter"
+    emissions: 195000
   },
   {
     storeId: "WM-IL-5002",
@@ -203,8 +185,7 @@ const sampleStores = [
     city: "Normal",
     state: "IL",
     address: "501 S Cottage Ave",
-    emissions: 168000,
-    type: "Supercenter"
+    emissions: 168000
   },
   {
     storeId: "WM-IL-5003",
@@ -212,8 +193,7 @@ const sampleStores = [
     city: "Champaign",
     state: "IL",
     address: "2610 N Prospect Ave",
-    emissions: 85000,
-    type: "Neighborhood Market"
+    emissions: 85000
   },
 
   // Other states (12 stores)
@@ -223,8 +203,7 @@ const sampleStores = [
     city: "Philadelphia",
     state: "PA",
     address: "2200 W Oregon Ave",
-    emissions: 172000,
-    type: "Supercenter"
+    emissions: 172000
   },
   {
     storeId: "WM-OH-7001",
@@ -232,8 +211,7 @@ const sampleStores = [
     city: "Columbus",
     state: "OH",
     address: "3579 S High St",
-    emissions: 188000,
-    type: "Supercenter"
+    emissions: 188000
   },
   {
     storeId: "WM-GA-8001",
@@ -241,8 +219,7 @@ const sampleStores = [
     city: "Atlanta",
     state: "GA",
     address: "1800 Howell Mill Rd NW",
-    emissions: 195000,
-    type: "Supercenter"
+    emissions: 195000
   },
   {
     storeId: "WM-NC-9001",
@@ -250,8 +227,7 @@ const sampleStores = [
     city: "Raleigh",
     state: "NC",
     address: "1520 N New Hope Rd",
-    emissions: 165000,
-    type: "Supercenter"
+    emissions: 165000
   },
   {
     storeId: "WM-WA-10001",
@@ -259,8 +235,7 @@ const sampleStores = [
     city: "Seattle",
     state: "WA",
     address: "2215 4th Ave S",
-    emissions: 78000,
-    type: "Neighborhood Market"
+    emissions: 78000
   },
   {
     storeId: "WM-CO-11001",
@@ -268,8 +243,7 @@ const sampleStores = [
     city: "Denver",
     state: "CO",
     address: "7800 E Smith Rd",
-    emissions: 125000,
-    type: "Supercenter"
+    emissions: 125000
   },
   {
     storeId: "WM-AZ-12001",
@@ -277,8 +251,7 @@ const sampleStores = [
     city: "Phoenix",
     state: "AZ",
     address: "5251 W Indian School Rd",
-    emissions: 198000,
-    type: "Supercenter"
+    emissions: 198000
   },
   {
     storeId: "WM-MI-13001",
@@ -286,8 +259,7 @@ const sampleStores = [
     city: "Detroit",
     state: "MI",
     address: "5851 Mercury Dr",
-    emissions: 185000,
-    type: "Supercenter"
+    emissions: 185000
   },
   {
     storeId: "WM-NV-14001",
@@ -295,8 +267,7 @@ const sampleStores = [
     city: "Las Vegas",
     state: "NV",
     address: "540 Marks St",
-    emissions: 175000,
-    type: "Supercenter"
+    emissions: 175000
   },
   {
     storeId: "WM-OR-15001",
@@ -304,8 +275,7 @@ const sampleStores = [
     city: "Portland",
     state: "OR",
     address: "4200 SE 82nd Ave",
-    emissions: 95000,
-    type: "Neighborhood Market"
+    emissions: 95000
   },
   {
     storeId: "WM-MN-16001",
@@ -313,8 +283,7 @@ const sampleStores = [
     city: "Minneapolis",
     state: "MN",
     address: "3000 White Bear Ave N",
-    emissions: 135000,
-    type: "Supercenter"
+    emissions: 135000
   },
   {
     storeId: "WM-MO-17001",
@@ -322,8 +291,7 @@ const sampleStores = [
     city: "St. Louis",
     state: "MO",
     address: "11101 St Charles Rock Rd",
-    emissions: 168000,
-    type: "Supercenter"
+    emissions: 168000
   }
 ];
 
@@ -333,7 +301,7 @@ function App() {
 
   useEffect(() => {
     // In a real app, you would fetch from your backend API
-    // axios.get('http://localhost:5000/routes/stores.js')
+    // axios.get('http://localhost:5000/api/stores')
     //   .then(res => setStores(res.data))
     //   .catch(err => console.error(err));
     
@@ -396,7 +364,6 @@ function App() {
               <th style={{ padding: '12px', textAlign: 'left' }}>Rank</th>
               <th style={{ padding: '12px', textAlign: 'left' }}>Store ID</th>
               <th style={{ padding: '12px', textAlign: 'left' }}>Location</th>
-              <th style={{ padding: '12px', textAlign: 'left' }}>Type</th>
               <th style={{ padding: '12px', textAlign: 'left' }}>Emissions (kg CO₂)</th>
               <th style={{ padding: '12px', textAlign: 'left' }}>Status</th>
             </tr>
@@ -415,7 +382,6 @@ function App() {
                 <td style={{ padding: '12px' }}>{index + 1}</td>
                 <td style={{ padding: '12px', fontWeight: 'bold' }}>{store.storeId}</td>
                 <td style={{ padding: '12px' }}>{store.city}, {store.state}</td>
-                <td style={{ padding: '12px' }}>{store.type || 'Supercenter'}</td>
                 <td style={{ 
                   padding: '12px', 
                   color: store.emissions > 100000 ? '#ff6b6b' : '#51cf66',
