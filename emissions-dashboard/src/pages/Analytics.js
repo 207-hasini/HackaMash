@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Legend } from 'recharts';
 import { TrendingUp, BarChart3, PieChart as PieChartIcon, Calendar, Filter } from 'lucide-react';
+import sampleStores from '../sampleStores';
 
 const COLORS = ['#3B82F6', '#FBBF24', '#10B981', '#EF4444', '#8B5CF6'];
 
 const Analytics = () => {
   const [timeRange, setTimeRange] = useState('30d');
+  const [region, setRegion] = useState('all');
 
   // Simulated analytics data
   const monthlyData = [
@@ -17,13 +19,21 @@ const Analytics = () => {
     { month: 'Jun', emissions: 43000, efficiency: 86, cost: 120000 },
   ];
 
-  const storePerformance = [
-    { name: 'Austin Store', emissions: 1200, efficiency: 87, savings: 15000 },
-    { name: 'Houston Store', emissions: 1600, efficiency: 78, savings: 8000 },
-    { name: 'Dallas Store', emissions: 1800, efficiency: 65, savings: 2000 },
-    { name: 'San Antonio Store', emissions: 1100, efficiency: 92, savings: 22000 },
-    { name: 'Fort Worth Store', emissions: 1350, efficiency: 81, savings: 12000 },
-  ];
+  // Get unique states
+  const regions = Array.from(new Set(sampleStores.map(s => s.state)));
+
+  // Filter stores by region
+  const filteredStores = region === 'all'
+    ? sampleStores
+    : sampleStores.filter(s => s.state === region);
+
+  // Map to chart data
+  const storePerformance = filteredStores.map(store => ({
+    name: `${store.city} Store`,
+    emissions: store.emissions,
+    efficiency: store.efficiency || 0,
+    savings: 0 // Placeholder, update if you have savings data
+  }));
 
   const energyBreakdown = [
     { name: 'Grid Electricity', value: 60, cost: 72000 },
@@ -49,6 +59,17 @@ const Analytics = () => {
               <option value="30d">Last 30 Days</option>
               <option value="90d">Last 90 Days</option>
               <option value="1y">Last Year</option>
+            </select>
+            <Filter className="w-5 h-5 text-yellow-200 ml-4" />
+            <select
+              className="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-400 text-white"
+              value={region}
+              onChange={e => setRegion(e.target.value)}
+            >
+              <option value="all">All Regions</option>
+              {regions.map(r => (
+                <option key={r} value={r}>{r}</option>
+              ))}
             </select>
           </div>
         </div>

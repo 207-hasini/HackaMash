@@ -3,11 +3,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { TrendingUp } from 'lucide-react';
 
 const EmissionsLineChart = ({ data, selectedStore }) => {
-  // If a specific store is selected, only show that line
-  const storeIds = selectedStore === 'all'
-    ? ['WM1001', 'WM1002', 'WM1003', 'WM1004', 'WM1005']
-    : [selectedStore];
-  const colors = ['#3B82F6', '#EF4444', '#F59E0B', '#10B981', '#8B5CF6'];
+  // Dynamically get all storeIds from the data keys (excluding 'time')
+  const allStoreIds = data.length > 0 ? Object.keys(data[0]).filter(key => key !== 'time') : [];
+  const storeIds = selectedStore === 'all' ? allStoreIds : [selectedStore];
+  const colors = ['#3B82F6', '#EF4444', '#F59E0B', '#10B981', '#8B5CF6', '#FF6B6B', '#51CF66', '#FFD700', '#A020F0', '#00CED1'];
 
   return (
     <div className="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-6">

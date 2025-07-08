@@ -34,7 +34,7 @@ const StoreDetailView = ({ store, onClose }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-gray-700/30 p-4 rounded-lg">
             <h4 className="text-lg font-semibold text-gray-300 mb-2 flex items-center"><Info className="w-5 h-5 mr-2 text-gray-400" />Basic Information</h4>
-            <p className="text-gray-400">Location: {store.location}</p>
+            <p className="text-gray-400">Location: {store.city}, {store.state}</p>
             <p className="text-gray-400">Store ID: {store.id}</p>
             <p className="text-gray-400">Current Status: <span className={`font-bold ${getStatusColor(store.status)}`}>{store.status}</span></p>
           </div>

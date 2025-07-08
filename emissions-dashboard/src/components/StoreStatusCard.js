@@ -30,12 +30,12 @@ const StoreStatusCard = ({ store, onClick }) => {
         </div>
         <div>
           <div className="font-medium">{store.name}</div>
-          <div className="text-sm text-gray-400">{store.location}</div>
+          <div className="text-sm text-gray-200">{store.city}, {store.state}</div>
         </div>
       </div>
       <div className="text-right">
         <div className="font-medium">{store.emissions.toFixed(1)} kg</div>
-        <div className="text-sm text-gray-400">{store.efficiency}% efficiency</div>
+        <div className="text-sm text-gray-200">{store.efficiency}% efficiency</div>
       </div>
     </div>
   );

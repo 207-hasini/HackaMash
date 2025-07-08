@@ -3,9 +3,9 @@ import { AlertTriangle, TrendingUp, Target } from 'lucide-react';
 
 const AlertsPanel = () => {
   const alerts = [
-    { type: 'critical', title: 'Critical Alert', message: 'Dallas Store showing 25% higher emissions than average', icon: AlertTriangle, iconColor: 'text-red-400', borderColor: 'border-red-700', bgColor: 'bg-red-900/20' },
-    { type: 'recommendation', title: 'Recommendation', message: 'Consider HVAC optimization for Houston Store', icon: TrendingUp, iconColor: 'text-yellow-400', borderColor: 'border-yellow-700', bgColor: 'bg-yellow-900/20' },
-    { type: 'success', title: 'Success', message: 'Austin Store achieved 87% efficiency target', icon: Target, iconColor: 'text-green-400', borderColor: 'border-green-700', bgColor: 'bg-green-900/20' },
+    { type: 'critical', title: 'Critical Alert', message: 'Phoenix Store (AZ) showing 30% higher emissions than average', icon: AlertTriangle, iconColor: 'text-red-400', borderColor: 'border-red-700', bgColor: 'bg-red-900/20' },
+    { type: 'recommendation', title: 'Recommendation', message: 'Consider HVAC optimization for Miami Store (FL)', icon: TrendingUp, iconColor: 'text-yellow-400', borderColor: 'border-yellow-700', bgColor: 'bg-yellow-900/20' },
+    { type: 'success', title: 'Success', message: 'Chicago Store (IL) achieved 90% efficiency target', icon: Target, iconColor: 'text-green-400', borderColor: 'border-green-700', bgColor: 'bg-green-900/20' },
   ];
 
   return (

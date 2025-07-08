@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Store className="w-5 h-5 text-white" />
+                <img src={process.env.PUBLIC_URL + '/mark.png'} alt="Walmart Logo" className="w-6 h-6" />
               </div>
               <span className="text-xl font-bold text-blue-600">Walmart</span>
               <span className="text-sm text-gray-600">Emissions Optimizer</span>

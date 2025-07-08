@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Save, Calendar, Store, Zap, Truck, Thermometer, Factory, PlusCircle } from 'lucide-react';
+import sampleStores from '../sampleStores';
 
-const storeOptions = [
-  { id: 'WM1001', name: 'Austin Store' },
-  { id: 'WM1002', name: 'Houston Store' },
-  { id: 'WM1003', name: 'Dallas Store' },
-  { id: 'WM1004', name: 'San Antonio Store' },
-  { id: 'WM1005', name: 'Fort Worth Store' },
-];
+const storeOptions = sampleStores;
 
 const initialForm = {
   store: '',
@@ -16,8 +11,7 @@ const initialForm = {
   electricity: '',
   diesel: '',
   refrigerant: '',
-  manufacturing: '',
-  other: '',
+  manufacturing: ''
 };
 
 const DataInput = () => {
@@ -60,7 +54,7 @@ const DataInput = () => {
             >
               <option value="">Select a store</option>
               {storeOptions.map((s) => (
-                <option key={s.id} value={s.id}>{s.name}</option>
+                <option key={s.storeId} value={s.storeId}>{s.city}, {s.state} - {s.address}</option>
               ))}
             </select>
           </div>
@@ -131,19 +125,6 @@ const DataInput = () => {
               min="0"
               step="any"
               className="w-full bg-white/10 border border-yellow-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-yellow-400"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-yellow-300 mb-1 flex items-center">
-              <PlusCircle className="w-4 h-4 mr-1" /> Other (describe & value)
-            </label>
-            <input
-              type="text"
-              name="other"
-              value={form.other}
-              onChange={handleChange}
-              className="w-full bg-white/10 border border-yellow-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-yellow-400"
-              placeholder="e.g. Natural gas: 100 m3"
             />
           </div>
           <div className="flex justify-end">

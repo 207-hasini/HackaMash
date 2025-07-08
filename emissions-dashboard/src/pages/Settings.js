@@ -68,7 +68,7 @@ const Settings = () => {
               <div key={key} className="flex items-center justify-between">
                 <div>
                   <div className="font-medium text-gray-200 capitalize">
-                    {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                    {key === 'sms' ? 'SMS' : key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                   </div>
                   <div className="text-sm text-gray-400">
                     {key === 'email' && 'Receive email notifications'}
@@ -102,15 +102,7 @@ const Settings = () => {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-200 mb-2">Theme</label>
-              <select
-                value={displaySettings.theme}
-                onChange={(e) => handleDisplayChange('theme', e.target.value)}
-                className="w-full bg-white/10 border border-yellow-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-yellow-400"
-              >
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-                <option value="auto">Auto</option>
-              </select>
+              <div className="w-full bg-white/10 border border-yellow-400/30 rounded-lg px-3 py-2 text-white">Dark</div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-200 mb-2">Timezone</label>
