@@ -1,0 +1,116 @@
+/* Walmart-inspired Theme */
+.App {
+  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #0071ce;
+}
+
+/* Map Container */
+.leaflet-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 113, 206, 0.2);
+}
+
+/* Store Info Cards & Chart Containers */
+.card {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+th {
+  background-color: #0071ce;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e6f2ff;
+  cursor: pointer;
+}
+
+/* Emissions Status Badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-efficient {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-critical {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Chart Area */
+.chart-container {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 113, 206, 0.1);
+}
+
+/* Leaderboard Header */
+.leaderboard-header {
+  color: #0071ce;
+  border-bottom: 2px solid #ffc220;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+/* Tooltips */
+.leaflet-tooltip {
+  background-color: white;
+  border: 1px solid #0071ce;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  table, th, td {
+    font-size: 13px;
+  }
+}
