@@ -26,7 +26,7 @@ const Navbar = () => {
                 <img src={process.env.PUBLIC_URL + '/mark.png'} alt="Walmart Logo" className="w-6 h-6" />
               </div>
               <span className="text-xl font-bold text-blue-600">Walmart</span>
-              <span className="text-sm text-gray-600">Emissions Optimizer</span>
+              <span className="text-sm font-semibold text-yellow-600">CO₂re</span>
             </Link>
           </div>
 

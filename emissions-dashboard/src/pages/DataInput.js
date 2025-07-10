@@ -17,20 +17,63 @@ const initialForm = {
 const DataInput = () => {
   const [form, setForm] = useState(initialForm);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [mlResults, setMlResults] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Save to localStorage (simulate backend)
-    const key = `emissions_${form.store}_${form.date}`;
-    localStorage.setItem(key, JSON.stringify(form));
-    setSuccess(true);
-    setTimeout(() => setSuccess(false), 2000);
-    setForm(initialForm);
+    setLoading(true);
+    setMlResults(null);
+    
+    try {
+      // Call backend API with ML integration
+      const payload = {
+        storeId: form.store,
+        electricity_kwh: parseFloat(form.electricity) || 0,
+        diesel_liters: parseFloat(form.diesel) || 0,
+        refrigerant_kg: parseFloat(form.refrigerant) || 0,
+        manufacturing_units: parseFloat(form.manufacturing) || 0,
+        timestamp: form.date + 'T10:00:00Z' // Add time component
+      };
+
+      console.log('🤖 Calling Walmart CO₂re ML Service...', payload);
+
+      const response = await fetch('http://localhost:5001/api/emissions/calculate-and-save', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('✅ ML Results received:', result);
+      
+      // Store ML results for display
+      setMlResults(result.ml_results);
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+        setMlResults(null);
+      }, 10000); // Show results for 10 seconds
+      
+      setForm(initialForm);
+      
+    } catch (error) {
+      console.error('❌ Error submitting data:', error);
+      alert('Error calculating emissions. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -136,10 +179,69 @@ const DataInput = () => {
               <span>Save Data</span>
             </button>
           </div>
+          {loading && (
+            <div className="flex items-center justify-center space-x-3 p-4 bg-blue-600/20 border border-blue-400 rounded-lg">
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-400"></div>
+              <span className="text-blue-300 font-semibold">🤖 Walmart CO₂re ML is calculating emissions...</span>
+            </div>
+          )}
+          
           {success && (
-            <div className="text-green-300 font-semibold text-center mt-2">Data saved successfully!</div>
+            <div className="text-green-300 font-semibold text-center mt-2">✅ Data saved successfully!</div>
           )}
         </form>
+
+        {/* ML Results Display */}
+        {mlResults && (
+          <div className="mt-8 space-y-6">
+            {/* Emissions Calculation Results */}
+            <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 rounded-xl p-6">
+              <h2 className="text-xl font-bold text-green-400 mb-4 flex items-center">
+                🧮 ML Calculation Results
+              </h2>
+              <div className="bg-white/10 rounded-lg p-4 mb-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-300">{mlResults.co2_emissions}</div>
+                  <div className="text-lg text-gray-300">kg CO₂ equivalent</div>
+                  <div className="text-sm text-gray-400 mt-1">Total calculated emissions</div>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Suggestions */}
+            <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border border-yellow-400/30 rounded-xl p-6">
+              <h2 className="text-xl font-bold text-yellow-400 mb-4 flex items-center">
+                🤖 AI-Powered Suggestions
+              </h2>
+              {mlResults.suggestions && mlResults.suggestions.length > 0 ? (
+                <div className="space-y-3">
+                  {mlResults.suggestions.map((suggestion, index) => (
+                    <div key={index} className="flex items-start space-x-3 p-3 bg-white/10 rounded-lg">
+                      <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <div className="text-gray-200">{suggestion}</div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center p-4 text-gray-400">
+                  ✅ No specific recommendations - your emissions are within optimal ranges!
+                </div>
+              )}
+            </div>
+
+            {/* Action Button */}
+            <div className="text-center">
+              <button
+                onClick={() => navigate('/')}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-semibold"
+              >
+                📊 View Updated Dashboard
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

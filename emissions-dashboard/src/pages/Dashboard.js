@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import KpiCard from '../components/KpiCard';
 import StoreStatusCard from '../components/StoreStatusCard';
 import AlertsPanel from '../components/AlertsPanel';
+import AISuggestionsPanel from '../components/AISuggestionsPanel';
 import EnergyBreakdownPieChart from '../components/EnergyBreakdownPieChart';
 import StoreMap from '../components/StoreMap';
 import sampleStores from '../sampleStores';
@@ -82,7 +83,7 @@ function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-yellow-600 text-white p-4">
       {/* Header */}
       <div className="flex flex-col md:flex-row items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold text-yellow-400 mb-2 md:mb-0">Dynamic Emissions Optimizer</h1>
+        <h1 className="text-3xl font-bold text-yellow-400 mb-2 md:mb-0">Walmart CO₂re Dashboard</h1>
         <div className="flex items-center space-x-2 text-lg font-mono text-yellow-200">
           <Clock className="w-5 h-5" />
           <span>{new Date().toLocaleString()}</span>
@@ -217,8 +218,9 @@ function Dashboard() {
       </div> */}
 
       {/* Bottom Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <EnergyBreakdownPieChart data={energyBreakdown} />
+        
         <div className="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-6">
           <h3 className="text-xl font-semibold mb-4 flex items-center text-yellow-400">Store Status Overview</h3>
           {/* Region Filter Dropdown */}
@@ -243,6 +245,12 @@ function Dashboard() {
             )}
           </div>
         </div>
+        
+        <AISuggestionsPanel />
+      </div>
+      
+      {/* Traditional Alerts Panel - Additional Section */}
+      <div className="mt-8">
         <AlertsPanel />
       </div>
     </div>

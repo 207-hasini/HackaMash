@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Root route for browser visibility or basic health check
 @app.route('/')
 def index():
-    return "🌍 ClimateQ API is running! Use POST /submit to get CO2 emissions and suggestions."
+    return "🌍 Walmart CO₂re ML API is running! Use POST /submit to get CO2 emissions and suggestions."
 
 # Submit route for actual data processing
 @app.route('/submit', methods=['POST'])
@@ -30,4 +30,4 @@ def submit_data():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5002)

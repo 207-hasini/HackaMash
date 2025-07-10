@@ -1,5 +1,5 @@
 {
-  "name": "emissions-dashboard",
+  "name": "walmart-co2re-dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

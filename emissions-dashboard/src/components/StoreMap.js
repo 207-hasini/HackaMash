@@ -19,7 +19,7 @@ const StoreMap = ({ stores, onStoreClick, selectedStore }) => {
   return (
     <div className="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-6 h-[500px]">
       <h3 className="text-xl font-semibold mb-4 flex items-center text-yellow-400">
-        Walmart Store Emissions Map
+        Walmart CO₂re Store Emissions Map
       </h3>
       <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="h-full w-full rounded-lg">
         <TileLayer

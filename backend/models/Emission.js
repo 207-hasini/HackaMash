@@ -6,8 +6,11 @@ const emissionSchema = new mongoose.Schema({
   breakdown: { // The raw data used for calculation
       energy_kwh: Number,
       fuel_liters: Number,
-      refrigerant_leaks_kg: Number // Leaks of HFCs
+      refrigerant_leaks_kg: Number, // Leaks of HFCs
+      manufacturing_units: Number
   },
+  suggestions: [String], // AI-generated suggestions from ML service
+  calculated_at: { type: Date, default: Date.now }, // When ML calculation was performed
   timestamp: { type: Date, default: Date.now, required: true }
 });
 
