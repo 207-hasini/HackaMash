@@ -1,6 +1,8 @@
 # Walmart CO₂re
 **Advanced Carbon Emissions Tracking and Optimization Dashboard**
 
+Submission: https://youtu.be/m9obVOZSI-c?si=DQAVZA3XJOqA-85W
+
 ## Problem Statement
 
 Imagine trying to navigate a complex city without a map, or managing a budget without knowing where your money is actually going. That's essentially the challenge Walmart faces with its current carbon footprint. 
